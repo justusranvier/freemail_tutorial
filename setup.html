@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN">
+<html xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" href="freemail.css" type="text/css" />
+<link href="favicon.png" type="image/png" />
+	<title>Freemail - Setup</title>
+	</head>
+<body>
+<div id="logo">
+	<a href="index.html" title="Homepage">
+		<img src="images/header.png" alt="Freemail" style="border: none; " />
+	</a>
+</div>
+
+<div id="breadcrumbs">
+	<p>Setup</p>
+</div>
+
+<div id="navbar">
+	<ul>
+		<li class="nav1"><a href="index.html" title="Home">
+			Home</a>
+		</li>
+		<li class="nav1"><a href="download.html" title="Download">
+			Download</a>
+		</li>
+		<li class="nav1"><a href="contact.html" title="Contact">
+			Contact</a>
+		</li>
+	</ul>
+</div>
+
+<div id="content">
+	<h1>Setup</h1>
+	
+<h2>Plugin Setup</h2>
+<ol>
+	<li><p>To setup the Freemail plugin first go to the the 'Plugins' page of your Freenet node's 'Configuration' menu.</p>
+		<p><a href="images/setup00.png"><img src="images/setup00.png" width="640" height="415" alt="Step 1" /></a></p>
+	</li>
+	<li><p>Copy and paste the plugin key you got from the <a href="download.html">download</a> page into the 'Add an Unofficial Plugin from Freenet' box and click 'Load'. Do not use the version of Freemail that is listed on the Plugins page.</p>
+		<p><a href="images/setup01.png"><img src="images/setup01.png" width="640" height="415" alt="Step 2" /></a></p>
+	</li>
+	<li><p>After the plugin is loaded click on the Freemail link on the right side of the menu bar.</p>
+		<p><a href="images/setup02.png"><img src="images/setup02.png" width="640" height="415" alt="Step 3" /></a></p>
+	</li>
+	<li><p>Click on the link to attach a Freemail account to an existing Web of Trust identity. If you don't have a Web of Trust identity yet stop here and create one.</p>
+		<p><a href="images/setup03.png"><img src="images/setup03.png" width="640" height="415" alt="Step 3" /></a></p>
+	</li>
+	<li><p>Select the identity you wish to setup and choose a password. When you are ready click 'Add account'.</p>
+		<p><a href="images/setup04.png"><img src="images/setup04.png" width="640" height="415" alt="Step 3" /></a></p>
+	</li>
+	<li><p>Now that your account is created click 'Login'.</p>
+		<p><a href="images/setup05.png"><img src="images/setup05.png" width="640" height="415" alt="Step 3" /></a></p>
+	</li>
+	<li><p>You are now in your inbox. The first message you see will contain helpful information, the most important being your new freemail address.</p>
+		<p><a href="images/setup06.png"><img src="images/setup06.png" width="640" height="415" alt="Step 3" /></a></p>
+	</li>
+	<li><p>Congratulations, now you have the Freemail plugin running, which means that you can send and receive emails through the Freenet web interface.</p>
+		<p><a href="images/setup07.png"><img src="images/setup07.png" width="640" height="415" alt="Step 3" /></a></p>
+	</li>
+</ol>
+
+<h2>Mail client setup</h2>
+<p>You can either access your mail via the web interface which appears under the 'Freemail' menu or you can setup your favorite email client.</p>
+<p>The settings for the email client, illustrated below with the Thunderbird email client, must be setup with the following settings. The Freemail plugin only listens on the loopback interface (127.0.0.1). If you need to access Freemail from a different computer than your node is running on you must use a proxy mechanism such as SSH port forwarding. Setting that up is beyond the scope of this guide.</p>
+<div class="container">
+	<div class="boxhead">
+		<h2>Settings</h2>
+	</div>
+	<div class="innerbox">
+	<!--  hack necessary because putting padding and width: 100% on the same element confuses firefox & konqueror (at least)  -->
+	<div class="innerinnerbox">
+		<h3>Incoming emails</h3>
+		<ul>
+			<li><b>Protocol:</b> IMAP</li>
+			<li><b>Server:</b> localhost</li>
+			<li><b>Port:</b> 4143</li>
+			<li><b>Username:</b> Your complete Freemail address</li>
+		</ul>
+	</div>
+	</div>
+	<div class="innerbox">
+	<!--  hack necessary because putting padding and width: 100% on the same  element confuses firefox & konqueror (at least)  -->
+	<div class="innerinnerbox">
+		<h3>Outgoing emails</h3>
+		<ul>
+			<li><b>Protocol:</b> SMTP</li>
+			<li><b>Server:</b> localhost</li>
+			<li><b>Port:</b> 4025</li>
+			<li><b>Username:</b> Your complete Freemail address</li>
+		</ul>
+	</div>
+	</div>
+</div>
+<p>Remember that your node must be running and connected to the network whilst you are reading and sending freemails.</p>
+
+<h3>Thunderbird</h3>
+<p>If you use Thunderbird as your email client:</p>
+<ol>
+	<li><p>Open Thunderbird and go to the 'Account Settings' menu. Under the 'Account Actions' menu choose "Add Mail Account...'</p>
+		<p>Fill in your name, Freemail address and the password you used above in step 5 of the plugin setup. Click 'Continue'</p>
+		<p><img src="images/setup09.png" alt="Step 1" /></p>
+	</li>
+	<li><p>Thunderbird will try to detect your settings but will fail. When it is done, replace the Server, Port and Username information with the correct values from the table above as shown. When you are done click 'Re-test'.</p>
+		<p>When Thunderbird is happy with the settings click 'Create Account'.</p>
+		<p><img src="images/setup10.png" alt="Step 2" /></p>
+	</li>
+	<li><p>This warning occurs because normally it's a bad idea to connect to a mail server over an insecure connection. Since this connection takes place on the localhost interface TLS is not necessary. Click on the checkbox and click 'Create Account' again.</p>
+		<p><img src="images/setup11.png" alt="Step 3" /></p>
+	</li>
+</ol>
+<p>Congratulations - you're now set up to send and receive email over Freenet!</p>
+</div>
+
+<br clear="both" />
+
+<div id="bookmark">
+<a href="/?newbookmark=USK@D60itFSVKLlN3i8CZ-AP39051oSyCMSAA1W2AvUAej4,qln7oHyudSMqHF8JiKngqx~tgV8As~isdNagf6gS3EE,AQACAAE/freemail/-1/&amp;desc=Freemail" title="Add this site to your bookmarks">
+Bookmark
+</a>
+</div>
+
+<div id="footer">
+by <a href="/Sone/viewSone.html?sone=aexXxyfUdOAh1BE1WLEgg5-uM~TYfiRgjeclzGHi5HY">Justus Ranvier</a>
+</div>
+
+</body>
+</html>
