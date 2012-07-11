@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN">
 <html xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -40,6 +40,50 @@
 	<div class="container">
 		<div class="boxhead">
 			<h2>News</h2>
+		</div>
+		<div class="innerbox">
+		<!--  hack necessary because putting padding and width: 100% on the same element confuses firefox & konqueror (at least)  -->
+		<div class="innerinnerbox">
+			<h3>Tuesday, 10th July, 2012</h3><p>Freemail 0.2.2-rc1 is released</p><h4>Release notes:</h4>
+			<code>
+			<p>I said I was going to release 0.2.2 today, but found an important bug at the last minute, so we'll call it RC1 instead and delay 0.2.2 for a day or two. The two most important fixes are both related to privacy. The first one fixes a bug in the webmail client that would make the date be sent in the local language instead of English, and the second fixes the filtering of messages from email clients which would send the local timezone instead of converting it to UTC. Both bugs were as far as I can tell introduced in 0.2. Because of this I would very much appreciate an email (via the webmail client) from someone that has their computer configured for something other than English.</p>
+			<p>Freemail 0.2.2-rc1: <a href="/CHK@PJfmI68EzMQ-E4MPV73amCukZbcogoJPj4C~MlLGePo,Vsf1S5VBqqrr2LBSK-tockuOQkB8TQ1d1Rl5ZGnW8V8,AAIC--8/Freemail-0.2.2-rc1.jar">Freemail-0.2.2-rc1.jar</a></p>
+			<h5>Changelog:</h5>
+			<dl>
+				<dt>Bugfixes:</dt>
+				<dd><ul>
+					<li>Fixed bug that stopped In-Reply-To header from being added to replies when using the web interface</li>
+					<li>Don't automatically mark messages as seen when they are deleted using IMAP</li>
+					<li>Set locale when adding date to messages sent using the web interface, and when creating the welcome message</li>
+					<li>Filter email headers before adding to outbox</li>
+					<li>Encode non-ascii characters in nickname when sending messages from the web interface</li>
+					<li>Drop or encode non-ascii characters from the headers when sending messages using the web interface</li>
+					<li>Fix decoding of multibyte characters in headers</li>
+					</ul></dd>
+				<dt>Improvements:</dt>
+				<dd><ul>
+					<li>Implement IMAP search commands needed by Thunderbird</li>
+					<li>Add References header when replying using the web interface</li>
+				</ul></dd>
+				<dt>Build improvements:</dt>
+				<dd><ul>
+					<li>Don't fail build if unit tests or Checkstyle fails</li>
+					<li>Check unit test failures when running checkcommit</li>
+					<li>Avoid some false positives when running checkcommit</li>
+				</ul></dd>
+				<dt>Code changes:</dt>
+				<dd><ul>
+					<li>Replace arrays with Lists in MailMessage API</li>
+					<li>Split IMAPTestBase into two classes (with and without messages)</li>
+					<li>Combine handling of IMAP fetch and uid fetch commands</li>
+				</ul></dd>
+				<dt>Other:</dt>
+				<dd><ul>
+					<li>Change copyright header in Version.java from LGPL to GPL</li>
+				</ul></dd>
+			</dl>
+			</code>
+		</div>
 		</div>
 		<div class="innerbox">
 		<!--  hack necessary because putting padding and width: 100% on the same element confuses firefox & konqueror (at least)  -->
